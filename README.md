@@ -8,3 +8,7 @@ provide your [spotify client id and secret](https://stevesie.com/docs/pages/spot
 # Music source
 All music comes from YouTube. Only use Music Downloader to download copyright-free music, we do not endorse piracy. Metadata comes from the spotily api.
 
+# Version History
+
+### Release 1.0
+First release
