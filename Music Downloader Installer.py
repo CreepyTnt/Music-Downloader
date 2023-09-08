@@ -58,23 +58,23 @@ file_path = 'C:\\musicdl\\youtube_download.py'
 urllib.request.urlretrieve(url, file_path)
 
 
-#create auth.py file
-if os.path.exists('C:\\musicdl\\auth.py'):
+#create config.py file
+if os.path.exists('C:\\musicdl\\config.py'):
     print('already installed')
 
 else:
 
     does_have_spotify = input('Do you have a spotify developer account, client id, and secret token for music metadata? (y/n)')
 
-    if does_have_spotify.lower == 'y':
+    if does_have_spotify.lower() == 'y':
         client_id = input('enter your client_id')
         secret = input('please enter your secret token')
-        with open('C:\\musicdl\\auth.py', 'w') as f:
+        with open('C:\\musicdl\\config.py', 'w') as f:
             f.write(f"use_spotify = True; client_id={client_id}; client_secret={secret}")
 
     else:
 
-        with open('C:\\musicdl\\auth.py', 'w') as f:
+        with open('C:\\musicdl\\config.py', 'w') as f:
             f.write(f"use_spotify = False; client_id=''; client_secret=''")
 
 
