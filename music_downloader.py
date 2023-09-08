@@ -5,31 +5,32 @@ from mutagen.easyid3 import EasyID3
 import pprint
 import os
 from mutagen.id3 import ID3, TIT2, TPE1, TALB, TRCK
-import auth
+import config
 #import pprint
 
 
 #Authentication - without user
 
-if auth.use_spotify:
-    client_credentials_manager = SpotifyClientCredentials(client_id=auth.client_id, client_secret=auth.client_secret)
+if config.use_spotify:
+    client_credentials_manager = SpotifyClientCredentials(client_id=config.client_id, client_secret=config.client_secret)
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
 
-def download(query, location = r'C:\gabbtools\songs'):
+
+def download(query, location = r'C:\MusicDl\songs'):
     try:
-        if auth.use_spotify:
+        if config.use_spotify:
             results = sp.search(query, limit=1, offset=0, type='track', market='us')
         else:
             results = 'none'
         path = location
 
 
-        ytdl.download(query, path)
+        out_file = ytdl.download(query, path)
 
-        if auth.use_spotify:
+        if config.use_spotify:
             filename = results['tracks']['items'][0]['name'] + ' -- ' + results['tracks']['items'][0]['artists'][0]['name'] + '.mp3'
         else:
-            filename = 'file.mp3'
+            filename = f'{query}.mp3'
         
             
         try:
