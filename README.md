@@ -12,3 +12,5 @@ All music comes from YouTube. Only use Music Downloader to download copyright-fr
 
 ### Release 1.0
 First release
+### Release 1.1
+Added more instructions to the ui, changed music download location from the desktop to the music folder, made an installer, songs downloaded without spotify now have the search query as the file name instead of "file.mp3"
